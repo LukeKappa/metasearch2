@@ -55,8 +55,14 @@
       trigger-coolify:
         needs: build-and-push
         runs-on: ubuntu-latest
-        if: ${{ secrets.COOLIFY_WEBHOOK_URL != '' }}
         steps:
           - name: Trigger Coolify Deployment Webhook
+            env:
+              COOLIFY_WEBHOOK_URL: ${{ secrets.COOLIFY_WEBHOOK_URL }}
             run: |
-              curl -X POST "${{ secrets.COOLIFY_WEBHOOK_URL }}" || echo "Webhook triggered."
+              if [ -n "$COOLIFY_WEBHOOK_URL" ]; then
+                echo "Sending deployment trigger to Coolify..."
+                curl -s -X POST "$COOLIFY_WEBHOOK_URL" || echo "Webhook call complete."
+              else
+                echo "COOLIFY_WEBHOOK_URL secret is not configured. Skipping automated deploy trigger."
+              fi
