@@ -1,0 +1,35 @@
+:root {
+  /* body background - Pure OLED Black */
+  --bg-1: #000000;
+  /* background of the content - Deep OLED Gray */
+  --bg-2: #090909;
+  /* input suggestions background - Dark Charcoal */
+  --bg-3: #121212;
+  /* mostly borders - Subtle Gray Border */
+  --bg-4: #262626;
+
+  /* main text color - Crisp High-Contrast White */
+  --fg-1: #ffffff;
+  /* search result description - Cool Light Gray */
+  --fg-2: #cccccc;
+  --fg-3: #888888;
+
+  /* focus outline - Platinum Accent */
+  --accent: #ffffff;
+
+  /* links - Sleek Silver / Crisp Platinum Links */
+  --link: #e0e0e0;
+  --link-visited: #888888;
+
+  /* positive (success / URL / status) */
+  --positive: #d4d4d4;
+  /* negative (error / danger) */
+  --negative: #737373;
+
+  /* Syntax Highlighting (Pure Grayscale Spectrum) */
+  --syntax-string: #e5e5e5;
+  --syntax-special: #ffffff;
+  --syntax-constant: #a3a3a3;
+  --syntax-comment: #525252;
+  --syntax-func: #fafafa;
+}
