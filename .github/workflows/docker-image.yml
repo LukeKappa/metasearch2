@@ -51,18 +51,3 @@
               labels: ${{ steps.meta.outputs.labels }}
               cache-from: type=gha
               cache-to: type=gha,mode=max
-
-      trigger-coolify:
-        needs: build-and-push
-        runs-on: ubuntu-latest
-        steps:
-          - name: Trigger Coolify Deployment Webhook
-            env:
-              COOLIFY_WEBHOOK_URL: ${{ secrets.COOLIFY_WEBHOOK_URL }}
-            run: |
-              if [ -n "$COOLIFY_WEBHOOK_URL" ]; then
-                echo "Sending deployment trigger to Coolify..."
-                curl -s -X POST "$COOLIFY_WEBHOOK_URL" || echo "Webhook call complete."
-              else
-                echo "COOLIFY_WEBHOOK_URL secret is not configured. Skipping automated deploy trigger."
-              fi
