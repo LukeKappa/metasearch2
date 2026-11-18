@@ -33,6 +33,7 @@ engines! {
     GoogleScholar = "google_scholar",
     Bing = "bing",
     Brave = "brave",
+    DuckDuckGo = "duckduckgo",
     Marginalia = "marginalia",
     RightDao = "rightdao",
     Stract = "stract",
@@ -60,6 +61,7 @@ engine_requests! {
     // search
     Bing => search::bing::request, parse_response,
     Brave => search::brave::request, parse_response,
+    DuckDuckGo => search::duckduckgo::request, parse_response,
     GoogleScholar => search::google_scholar::request, parse_response,
     Google => search::google::request, parse_response,
     Marginalia => search::marginalia::request, parse_response,

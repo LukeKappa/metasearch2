@@ -58,6 +58,7 @@ impl Default for EnginesConfig {
         map.insert(Engine::Google, EngineConfig::new().with_weight(1.05));
         map.insert(Engine::Bing, EngineConfig::new().with_weight(1.0));
         map.insert(Engine::Brave, EngineConfig::new().with_weight(1.25));
+        map.insert(Engine::DuckDuckGo, EngineConfig::new().with_weight(1.10));
         map.insert(
             Engine::Marginalia,
             EngineConfig::new().with_weight(0.15).with_extra(
