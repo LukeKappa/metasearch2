@@ -72,7 +72,7 @@ main {
   max-width: 40rem;
   /* margin: 0 0 0 10rem; */
   padding: 1rem 0.5rem;
-  background-color: var(--bg-2);
+  background-color: var(--bg-1);
   min-height: 100%;
 }
 .search-images > main {
